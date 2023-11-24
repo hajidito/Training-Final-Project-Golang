@@ -22,10 +22,10 @@ var (
 
 // func Connect()(*sql.DB, error){
 func Connect() {
-	err := godotenv.Load()
-	if err != nil {
-		panic(err)
-	}
+	// err := godotenv.Load()
+	// 	panic(err)
+	// }
+	godotenv.Load()
 
 	var (
 		// host     = os.Getenv("DB_HOST")
