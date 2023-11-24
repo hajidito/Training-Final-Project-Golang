@@ -1,0 +1,50 @@
+basePath: /
+definitions:
+  model.Employee:
+    properties:
+      age:
+        type: integer
+      division:
+        type: string
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+host: localhost:9000
+info:
+  contact:
+    email: pegadaian.id
+    name: pegadaian
+  description: Api Document Employee
+  license:
+    name: pegadaian 1.0
+  termsOfService: http://localhost
+  title: Api Document Employee
+  version: "1.0"
+paths:
+  /employee:
+    post:
+      consumes:
+      - application/json
+      description: Create Employee
+      parameters:
+      - description: create employee
+        in: body
+        name: model.Employee
+        required: true
+        schema:
+          $ref: '#/definitions/model.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Employee'
+      summary: Create Employee
+      tags:
+      - Employee
+swagger: "2.0"

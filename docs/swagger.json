@@ -1,0 +1,76 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Api Document Employee",
+        "title": "Api Document Employee",
+        "termsOfService": "http://localhost",
+        "contact": {
+            "name": "pegadaian",
+            "email": "pegadaian.id"
+        },
+        "license": {
+            "name": "pegadaian 1.0"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:9000",
+    "basePath": "/",
+    "paths": {
+        "/employee": {
+            "post": {
+                "description": "Create Employee",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "Create Employee",
+                "parameters": [
+                    {
+                        "description": "create employee",
+                        "name": "model.Employee",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Employee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Employee"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.Employee": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "type": "integer"
+                },
+                "division": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
