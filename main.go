@@ -52,6 +52,6 @@ func main() {
 	r.POST("/login", controller.UserLogin)
 	//route for swagger
 	r.GET("/swagger/*", echoSwagger.WrapHandler)
-	var port = os.Getenv("PORT")
+	var port = os.Getenv("PGPORT")
 	r.Logger.Fatal(r.Start(":" + port))
 }
