@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"webserver/config"
 	"webserver/controller"
 	"webserver/middleware"
@@ -51,5 +52,6 @@ func main() {
 	r.POST("/login", controller.UserLogin)
 	//route for swagger
 	r.GET("/swagger/*", echoSwagger.WrapHandler)
-	r.Logger.Fatal(r.Start(":9000"))
+	var port = os.Getenv("PORT")
+	r.Logger.Fatal(r.Start(":" + port))
 }
